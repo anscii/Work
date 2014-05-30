@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<ruleset name="Sports">
+    <description>The Sports coding standard based on PEAR.</description>
+
+    <!-- Checks the declaration of the class is correct -->
+    <!-- Проверяет корректность объявления класса -->
+    <rule ref="PEAR.Classes.ClassDeclaration"/>
+
+    <!-- Looks for dublicate class names in different files -->
+    <!-- Проверяет наличие одноименных классов в разных файлах -->
+    <rule ref="Generic.Classes.DuplicateClassName"/>
+
+    <!-- Detects empty statement -->
+    <!-- Ищет пустые условия -->
+    <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+
+    <!-- Detects the usage of one and the same incrementer into an outer and an inner loop -->
+    <!-- Ищет использование одного и того же инкремента во вложенных циклах  -->
+    <rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
+
+    <!-- Detects unconditional if- and elseif-statements -->
+    <!-- Detects unconditional if- and elseif-statements -->
+    <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+
+    <!-- Checks the for unused function parameters -->
+    <!-- Проверяет наличие неиспользуемых параметров функций -->
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+
+    <!-- Detects unnecessary overridden methods that simply call their parent -->
+    <!-- Ищет лишние перегруженные методы, которые тупо вызывают своего родителя -->
+    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
+     
+    <!-- Warns about FIXME comments -->
+    <!-- Предупреждает о наличии FIXME комментов -->
+    <rule ref="Generic.Commenting.Fixme"/>
+    
+    <!-- Warns about TODO comments -->
+    <!-- Предупреждает о наличии TODO комментов -->
+    <!-- <rule ref="Generic.Commenting.Todo"/> -->
+
+    <!-- Parses and verifies the doc comments for functions -->
+    <!-- Проверка наличия и правильности оформления DOC комментов для функций и методов -->
+    <!-- <rule ref="PEAR.Commenting.FunctionComment">
+    <severity>0</severity>
+    </rule> -->
+    
+    <!-- Checks that no perl-style comments are used -->
+    <!-- Осутствие инлайновых комментов в перловом стиле -->
+    <rule ref="PEAR.Commenting.InlineComment" />
+    
+    <!-- Parses and verifies the doc comments for functions -->
+    <!-- Проверка doc-комментов к функциям -->
+    <!-- <rule ref="PEAR.Commenting.FunctionComment" /> -->
+
+    <!-- Use warnings for inline control structures -->
+    <!-- Предупреждает об инлайновых контрольных структурах -->
+    <rule ref="Generic.ControlStructures.InlineControlStructure">
+    <properties>
+    <property name="error" value="false"/>
+    </properties>
+    </rule>
+
+    <!-- Verifies that control statements conform to their coding standards -->
+    <!-- Проверка корректности оформления контрольных структур (расположение скобочек на разных строках и т.п.) -->
+    <rule ref="Sports.ControlStructures.ControlSignature" /> 
+
+    <!-- Checks that the include_once is used in conditional situations, and require_once is used elsewhere. 
+        Also checks that brackets do not surround the file being included. -->
+    <!-- Проверяет, что include_once  используется только в условиях, а require_once - везде.
+        Также проверяет, что они используются как операторы, а не как функции (скобкам нет!) -->
+    <rule ref="PEAR.Files.IncludingFile" /> 
+    
+    <!-- Use Unix newlines -->
+    <!-- Надо использовать Unix переводы строк -->
+    <rule ref="Generic.Files.LineEndings">
+        <properties>
+            <property name="eolChar" value="\n"/>
+        </properties>
+    </rule>
+
+    <!-- Ensures the whole file is PHP only, with no whitespace or inline HTML -->
+    <!-- Проверяет, что файлы содержат только PHP код, без пустых мест или встроенного HTML -->
+    <rule ref="Generic.Files.InlineHTML" />
+
+    <!-- Lines can be 85 chars long, but never show errors -->
+    <!-- Максимальная длина строки кода - 85 символов, но давайте не будем на это сурово ругаться -->
+    <!--  <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="85"/>
+            <property name="absoluteLineLimit" value="0"/>
+        </properties>
+    </rule> -->
+
+    <!-- If an assignment goes over two lines, ensure the equal sign is indented -->
+    <!-- Проверяет отступы для многострочных присвоений -->
+    <!-- <rule ref="PEAR.Formatting.MultiLineAssignment" /> -->
+
+    <!-- Ensures there is a single space after cast tokens. -->
+    <!-- Проверяет наличие одного пробела после оператора приведения типа -->
+    <!-- <rule ref="Generic.Formatting.SpaceAfterCast" /> -->
+
+    <!-- Ensures there is no space after cast tokens. -->
+    <!-- Проверяет отсутствие пробелов после оператора приведения типа -->
+    <rule ref="Generic.Formatting.NoSpaceAfterCast" />
+
+    <!-- If there are multiple adjacent assignments, it will check that the equals signs of each assignment are aligned -->
+    <!-- При наличии многострочных присваиваний проверяет, что все знаки = выровнены -->
+    <!-- <rule ref="Generic.Formatting.MultipleStatementAlignment" /> -->
+
+    <!-- Ensures each statement is on a line by itself -->
+    <!-- Проверяет, что каждый оператор располагается на одной строке -->
+    <rule ref="Generic.Formatting.DisallowMultipleStatements" />
+    
+    <!-- Ensures that variables are not passed by reference when calling a function -->
+    <!-- Проверяет отсутствие переменных, передающихся по ссылке при вызове функции -->
+    <rule ref="Generic.Functions.CallTimePassByReference" />
+    
+    <!-- Checks that calls to methods and functions are spaced correctly -->
+    <!-- Проверяет правильные отступы и пробелы при оформлении вызовов функций и методов -->
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing" />
+    
+    <!-- Checks that the opening brace of a function is on the line after the function declaration -->
+    <!-- Проверяет, что открывающая скобка находится на той же строке, что и определение функции -->
+    <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman" /> 
+
+    <!-- Checks the cyclomatic complexity (McCabe) for functions -->
+    <!-- Проверка цикломатической сложности (по МакКейбу) для функций -->
+    <!-- <rule ref="Generic.Metrics.CyclomaticComplexity" /> -->
+
+    <!-- Checks the nesting level for methods -->
+    <!-- Проверка уровня вложенности -->
+    <!-- <rule ref="Generic.Metrics.NestingLevel" /> --> 
+    
+    <!-- Ensures that constant names are all uppercase -->
+    <!-- Проверяет заглавные имена констант -->
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName" />
+
+    <!-- Checks that calls to methods and functions are spaced correctly -->
+    <!-- Проверка корректности оформления отступов и пробелов при вызове функций -->
+    <rule ref="PEAR.Functions.FunctionCallSignature"/>
+    
+    <!-- parameters defined for a function that have a default value come at the end of the function signature -->
+    <!-- Необязательные параметры должны располагаться после обязательных в описании функции -->
+    <rule ref="PEAR.Functions.ValidDefaultValue"/>
+
+    <!-- Ensure single and multi-line function declarations are defined correctly -->
+    <!-- Проверяет правильность оформления одно- и многострочных описаний функций -->
+    <rule ref="PEAR.Functions.FunctionDeclaration"/>
+
+    <!-- This message is not required as spaces are allowed for alignment -->
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Favor PHP 5 constructor syntax, which uses "function __construct()" -->
+    <!-- Использовать синтаксис PHP 5 для конструкторов "function __construct()" -->
+    <rule ref="Generic.NamingConventions.ConstructorName"/>
+
+    <!-- Ensures class and interface names start with a capital letter and use _ separators -->
+    <!-- Проверяет, что имена классов и интерфейсов начинаются с заглавной буквы и используют разделитель _ -->
+    <rule ref="PEAR.NamingConventions.ValidClassName"/>
+
+    <!-- Checks that the opening PHP tag is the first content in a file -->
+    <!-- Проверяет, что файл начинается с открывающего тега PHP -->
+    <rule ref="Generic.PHP.CharacterBeforePHPOpeningTag"/>
+
+    <!-- Checks that all uses of true, false and null are lowercase. -->
+    <!-- Проверяет, что все true, false и null прописаны строчными буквами. -->
+    <rule ref="Generic.PHP.LowerCaseConstant"/>
+
+    <!-- Makes sure that shorthand PHP open tags are not used. -->
+    <!-- Запрет использования коротких открывающих тегов PHP -->
+    <rule ref="Generic.PHP.DisallowShortOpenTag"/>
+
+    <!-- Discourages the use of deprecated functions -->
+    <!-- Запрещает использовать устаревшие функции -->
+    <rule ref="Generic.PHP.DeprecatedFunctions"/>
+
+    <!-- Checks that all PHP keywords are lowercase -->
+    <!-- Проверяет, что все ключевые слова PHP - в нижнем регистре -->
+    <rule ref="Generic.PHP.LowerCaseKeyword"/>
+
+    <!-- Discourages the use of alias functions -->
+    <!-- Запрет использования функций-алиасов (запрещенных) -->
+    <rule ref="Generic.PHP.ForbiddenFunctions"/>
+
+    <!-- Throws an error or warning when any code prefixed with an asperand is encountered -->
+    <!-- Запрет заглушки ошибок с помощью @ -->
+    <rule ref="Generic.PHP.NoSilencedErrors"/>
+
+    <!-- Checks that two strings are not concatenated together; suggests using one string instead -->
+    <!-- Вместо тупой конкатенации двух строк предлагает использовать одну строку -->
+    <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
+
+    <!-- Tests that the correct Subversion properties are set -->
+    <!-- Проверка правильности свойств svn -->
+    <rule ref="Generic.VersionControl.SubversionProperties"/>
+
+    <!-- Checks that object operators are indented 4 spaces if they are the first thing on a line -->
+    <!-- Проверка отступа в 4 пробела -->
+    <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
+
+    <!-- Throws errors if tabs are used for indentation. -->
+    <!-- Запрет использовать табы для отступов -->
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+
+    <!-- Checks that control structures are structured correctly, and their content is indented correctly.
+        This sniff will throw errors if tabs are used for indentation rather than spaces. -->
+    <!-- Проверка правильности оформления отступов -->
+    <rule ref="Generic.WhiteSpace.ScopeIndent" /> 
+
+</ruleset>
