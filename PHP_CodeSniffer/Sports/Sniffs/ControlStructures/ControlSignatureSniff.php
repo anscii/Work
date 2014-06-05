@@ -51,12 +51,14 @@ class Sports_Sniffs_ControlStructures_ControlSignatureSniff extends PHP_CodeSnif
                 'doEOL{EOL...}EOLwhile (...);EOL',
                 'while (...)EOL{EOL...}',
                 'for (...)EOL{EOL',
-                'if (...)EOL{EOL',
-                'foreach (...)EOL{EOL',
-                '}EOLelse if (...)EOL{EOL',
-                '}EOLelseif (...)EOL{EOL',
-                '}EOLelseEOL{EOL',
+                'if (...)EOL',
+                'foreach (...)EOL',
+                'else if (...)EOL',
+                'elseif (...)EOL',
+                'elseEOL',
                 'doEOL{EOL',
+                '{EOL',
+                '}EOL',
                );
 
     }//end getPatterns()

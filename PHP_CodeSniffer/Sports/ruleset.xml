@@ -200,13 +200,8 @@
     <!-- Проверка отступа в 4 пробела -->
     <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
 
-    <!-- Throws errors if tabs are used for indentation. -->
-    <!-- Запрет использовать табы для отступов -->
-    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
-
-    <!-- Checks that control structures are structured correctly, and their content is indented correctly.
-        This sniff will throw errors if tabs are used for indentation rather than spaces. -->
-    <!-- Проверка правильности оформления отступов -->
-    <rule ref="Generic.WhiteSpace.ScopeIndent" /> 
+    <!-- Throws errors if spaces are used for indentation. -->
+    <!-- Запрет использовать пробелы для отступов -->
+    <rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
 
 </ruleset>
