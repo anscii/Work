@@ -48,17 +48,19 @@ class Sports_Sniffs_ControlStructures_ControlSignatureSniff extends PHP_CodeSnif
     protected function getPatterns()
     {
          return array(
-                'doEOL{EOL...}EOLwhile (...);EOL',
-                'while (...)EOL{EOL...}',
-                'for (...)EOL{EOL',
+                'doEOL{...EOL...}EOLwhile (...);EOL',
+                'while (...)EOL...{EOL...}',
+                'for (...)EOL',
                 'if (...)EOL',
                 'foreach (...)EOL',
                 'else if (...)EOL',
                 'elseif (...)EOL',
                 'elseEOL',
-                'doEOL{EOL',
+                'doEOL',
                 '{EOL',
                 '}EOL',
+                'tryEOF',
+                'catch (...)EOF'
                );
 
     }//end getPatterns()
